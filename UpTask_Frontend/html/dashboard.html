@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - UpTask</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body class="dashboard-page">
+
+<div class="dashboard"> <!-- THIS WAS MISSING -->
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 id="roleTitle">Dashboard</h2>
+        <a href="#" onclick="showSection('tasks')" class="active">Tasks</a>
+        <a href="#" onclick="showSection('users')">Users</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <header class="dashboard-header">
+            <h2 id="userInfo"></h2>
+        </header>
+
+        <!-- TASKS -->
+        <section id="tasks" class="dashboard-section">
+            <h3>Tasks</h3>
+
+            <div class="kanban">
+                <div class="kanban-column">
+                    <h3>TO DO</h3>
+                    <div class="kanban-list" data-status="TODO"></div>
+                </div>
+
+                <div class="kanban-column">
+                    <h3>IN PROGRESS</h3>
+                    <div class="kanban-list" data-status="IN_PROGRESS"></div>
+                </div>
+
+                <div class="kanban-column">
+                    <h3>DONE</h3>
+                    <div class="kanban-list" data-status="DONE"></div>
+                </div>
+            </div>
+        </section>
+        <section id="users" class="dashboard-section hidden">
+             <h3>Users</h3> 
+             <div id="usersList" class="card-container">
+                 <!-- User cards will be added here --> 
+                </div> 
+        </section>
+
+       
+
+    </main>
+</div>
+<script src="/js/auth.js"></script>
+<script src="../js/dashboard.js"></script>
+<script src="../js/kanban.js"></script>
+</body>
+
+</html>
